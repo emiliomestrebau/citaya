@@ -1,0 +1,45 @@
+name: Historia de usuario
+description: Valor para el ciudadano o para el personal municipal
+title: "HU-XX · "
+labels: ["historia de usuario"]
+body:
+  - type: markdown
+    attributes:
+      value: "Una historia de usuario describe **valor**, no una tarea técnica. Pequeña, independiente y verificable (INVEST)."
+  - type: input
+    id: rol
+    attributes:
+      label: Como...
+      placeholder: ciudadano con una cita reservada
+    validations:
+      required: true
+  - type: input
+    id: quiero
+    attributes:
+      label: Quiero...
+      placeholder: cancelar mi cita desde la web
+    validations:
+      required: true
+  - type: input
+    id: para
+    attributes:
+      label: Para...
+      placeholder: liberar el hueco si no puedo ir y no tener que llamar al ayuntamiento
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Reglas de negocio que deben cumplirse. El detalle de las pruebas va en la historia de pruebas enlazada.
+      placeholder: |
+        - Se cancela con el localizador
+        - Solo con al menos 2 horas de antelación
+        - El hueco vuelve a quedar libre
+    validations:
+      required: true
+  - type: input
+    id: relacionadas
+    attributes:
+      label: Historias de pruebas y de operaciones relacionadas
+      placeholder: "HP-01 #2 · HO-01 #3"

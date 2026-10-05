@@ -1,0 +1,17 @@
+{
+  "name": "citaya",
+  "version": "0.9.0",
+  "description": "CitaYa · cita previa de la sede electrónica del Ayuntamiento de Villaverde del Río (proyecto de formación DevOps)",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "lint": "node scripts/lint.js",
+    "test": "node --test \"test/unit/*.test.js\"",
+    "build": "node scripts/build.js",
+    "start": "npm run build && node scripts/serve.js dist 8080",
+    "test:aceptacion": "node --test \"test/aceptacion/*.test.js\"",
+    "test:humo": "node --test \"test/humo/*.test.js\""
+  },
+  "license": "MIT"
+}

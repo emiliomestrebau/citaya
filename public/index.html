@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CitaYa · Cita previa · Ayuntamiento de Villaverde del Río</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <p class="sede">Sede electrónica · Ayuntamiento de Villaverde del Río</p>
+      <h1>CitaYa <span>· cita previa</span></h1>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta" aria-labelledby="t-reservar">
+      <h2 id="t-reservar">Pedir cita</h2>
+      <form id="form-reserva">
+        <label>Trámite <select id="tramite" required></select></label>
+        <label>Oficina <select id="oficina" required></select></label>
+        <label>Día <input id="fecha" type="date" required></label>
+        <label>Hora <select id="hora" required></select></label>
+        <label>DNI <input id="dni" placeholder="12345678Z" autocomplete="off" required></label>
+        <button type="submit">Reservar</button>
+      </form>
+      <div id="lista-espera" class="aviso" hidden>
+        <p>¿No encuentras un hueco que te venga bien? Te avisamos si se libera uno ese día.</p>
+        <button type="button" id="btn-espera">Apuntarme a la lista de espera</button>
+      </div>
+      <p id="msg-reserva" class="mensaje" role="status"></p>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="t-cancelar">
+      <h2 id="t-cancelar">Cancelar una cita</h2>
+      <form id="form-cancelar">
+        <label>Localizador <input id="localizador" placeholder="VDR-20261005-0001" required></label>
+        <button type="submit" class="secundario">Cancelar cita</button>
+      </form>
+      <p id="msg-cancelar" class="mensaje" role="status"></p>
+    </section>
+
+    <p id="enlace-clasico" class="clasico" hidden>
+      ¿Prefieres el <a href="clasico.html">formulario clásico</a>? Se retirará el 31 de diciembre de 2026.
+    </p>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <span>Proyecto de formación · datos ficticios · no introduzcas datos reales</span>
+      <span id="version">versión desconocida</span>
+    </div>
+  </footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

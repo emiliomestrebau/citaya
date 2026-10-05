@@ -1,0 +1,10 @@
+# Gestión de dependencias (módulo 4.1): Dependabot propone PR cuando hay versiones nuevas
+# de las GitHub Actions que usa el pipeline. En un fork hay que activarlo (LAB 2, retos).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "deps"

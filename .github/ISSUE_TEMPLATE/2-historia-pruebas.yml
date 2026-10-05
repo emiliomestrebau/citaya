@@ -1,0 +1,47 @@
+name: Historia de pruebas
+description: Cómo sabremos que una historia de usuario está bien hecha (escrita ANTES de programar)
+title: "HP-XX · "
+labels: ["historia de pruebas"]
+body:
+  - type: markdown
+    attributes:
+      value: "La historia de pruebas convierte los criterios de aceptación en escenarios **Dado / Cuando / Entonces** que acabarán siendo pruebas automáticas en el pipeline."
+  - type: input
+    id: historia
+    attributes:
+      label: Historia de usuario que valida
+      placeholder: "HU-01 #1"
+    validations:
+      required: true
+  - type: textarea
+    id: escenarios
+    attributes:
+      label: Escenarios
+      placeholder: |
+        Escenario 1 · cancelación con antelación
+          Dado una cita activa para el lunes a las 10:00
+          Cuando la cancelo el domingo a las 18:00
+          Entonces la cita queda "cancelada" y el hueco vuelve a estar libre
+
+        Escenario 2 · fuera de plazo
+          Dado una cita activa para el lunes a las 10:00
+          Cuando intento cancelarla el lunes a las 08:30
+          Entonces recibo el error FUERA_DE_PLAZO
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel de la pirámide de pruebas
+      options:
+        - Unitaria
+        - Aceptación / integración
+        - Extremo a extremo (UI)
+        - Humo en producción
+    validations:
+      required: true
+  - type: input
+    id: automatizacion
+    attributes:
+      label: Dónde quedará automatizada
+      placeholder: test/unit/cancelacion.test.js

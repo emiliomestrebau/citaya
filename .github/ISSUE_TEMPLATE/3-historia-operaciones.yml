@@ -1,0 +1,47 @@
+name: Historia de operaciones
+description: Lo que necesita quien opera el servicio (monitorización, capacidad, continuidad, soporte)
+title: "HO-XX · "
+labels: ["historia de operaciones"]
+body:
+  - type: markdown
+    attributes:
+      value: "Las personas que operan el servicio también son usuarios. Si sus necesidades no entran en el backlog, aparecen después como incidentes."
+  - type: input
+    id: rol
+    attributes:
+      label: Como...
+      placeholder: responsable de operación de la sede electrónica
+    validations:
+      required: true
+  - type: input
+    id: quiero
+    attributes:
+      label: Quiero...
+      placeholder: saber cuántas citas se cancelan al día y en qué oficina
+    validations:
+      required: true
+  - type: input
+    id: para
+    attributes:
+      label: Para...
+      placeholder: reasignar ventanillas y detectar si una oficina tiene un problema
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de necesidad
+      options:
+        - Monitorización / métricas
+        - Registro y trazabilidad
+        - Capacidad y escalado
+        - Continuidad y recuperación
+        - Seguridad y cumplimiento
+        - Soporte y diagnóstico
+    validations:
+      required: true
+  - type: input
+    id: slo
+    attributes:
+      label: SLO o métrica afectada
+      placeholder: "Disponibilidad 99,5 % (ops/slo.yaml)"
